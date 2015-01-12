@@ -1,0 +1,30 @@
+Efficiency Analysis
+
+play()
+
+1) n = # of cards in my hand
+   x = # of cards in the pile
+2) What to count: Number of comparisons
+3/4) Best case - Only one legal card or no legal card to play. Also, the best color in my hand is green because green is the first color 
+	 I check for as the best color. 
+												F(n,x) = 11n + 1 + 3 = 11n + 4  
+	 
+	 Worst case - If the player after me has 1 card, I will look through my hand for cards that prevent him from winning. 
+	 The worst case is if there are no cards in my hand that accomplish this so I just end up playing the first legal card in my 
+	 hand that matches the most prominent color in my hand. This is the worst case because I still have to go through my hand multiple 
+	 times to search for a better card to play.
+												F(n,x) = 11n + 4 + 3 + n + n + n + n + 4x + 4 + 2 + n + n 
+												F(n,x) = 17n + 4x + 13
+												
+5) O(17n + 4x)															
+	 
+
+
+callColor()
+
+1) n = # of cards in hand
+2) What to count: Number of comparisons
+3/4) Best case - Most prominent color in my hand is green. F(n) = 4n + 1
+	 Worst case- Most prominent color in my hand is red or yellow. F(n) = 4n + 3
+5) O(4n)  
+
